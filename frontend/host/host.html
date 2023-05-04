@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+		<title>Host</title>
+		<script>
+		if (location.hostname !== 'localhost') {location.href = '/user';}
+		</script>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<link rel='stylesheet' href='./css/hostStyle.css'>
+		<link id='pageIconElem' rel='icon' href='../imgs/framesIcon.png' >
+		<link rel='preload' as='image' href='../imgs/playIcon.png' >
+		<link rel='preload' as='image' href='../imgs/playIcon2.png' >
+		<script src='../js/peerjs.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script defer src='./js/peerLogic.js'></script>
+		<script defer src='./js/ioLogic.js'></script>
+		<script defer src='./js/uiLogic.js'></script>
+	</head>
+	<section id='textSection' class='d_n'>
+		<div id='plate'></div>
+	</section>
+	<body id='body'>
+		<span id='testBtn'> test </span>
+		<div id='main'>
+			<div id='streamBox'>
+				<video id='videoPreviewElem'></video>
+			</div>
+			<div id='controlsPanel'> 
+				<div class='line'>
+					<div class='linePart marginRight'>
+						<img id='usersCountImg' src='../imgs/usersIcon.png'>
+						<span id='usersCountSpan' class='cutText'> 0 </span>
+					</div>
+					<div class='linePart'>
+						peer server connection
+						<span id='peerServerStatusIcon'> 🖧 </span>
+					</div>
+					<div class='linePart rightSide marginRight'>
+						FPS : 
+						<span id='stream_frameRateElem' class='cutText' contenteditable> null </span>
+					</div>
+					<div class='linePart marginRight'>
+						Height : 
+						<span id='stream_heightElem' class='cutText'> null </span>
+					</div>
+					<div class='linePart marginRight'>
+						Width : 
+						<span id='stream_widthElem' class='cutText'> null </span>
+					</div>
+				</div>
+				<div class='line'>
+					<span id='pauseBtn' class='btn'>
+						Pause Video
+					</span>
+					<span id='getStream' class='btn'>
+						Stream
+					</span>
+					<span id='stopStream' class='btn'>
+						Stop
+					</span>
+					<span id='togglePreviewBtn' class='btn'>
+						Preview
+					</span>
+				</div>
+			</div>
+		</div>
+  </body>
+</html>

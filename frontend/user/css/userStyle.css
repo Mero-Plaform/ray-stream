@@ -1,0 +1,272 @@
+#body{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	height : 100vh;
+	width : 100vw;
+	margin : 0;
+	overflow : hidden;
+	position: relative;
+	font-family : arial;
+	user-select : none;
+}
+.entryScreen{
+	display: none;
+    justify-content: center;
+    align-items: center;
+	height: 100%;
+	width: 100%;
+	background-color: #00000082;
+	position : absolute;
+	z-index: 500;
+	cursor : pointer;
+}
+#screensBox{
+    height: 90%;
+    width: 90%;
+	position: relative;
+}
+#videoWrapper{
+    position: absolute;
+	cursor : grab;
+	z-index : 5;
+}
+#videoWrapper.moving{
+	cursor : grabbing;
+}
+#streamingVideoElem{
+	height: 100%;
+    width: 100%;
+	border-radius: 2vmin;
+	border: solid #019067 0.5vmin;
+	box-sizing: border-box;
+}
+.streamBgText{
+	color: #026b4d;
+    font-size: 50px;
+    opacity: .5;
+    position: absolute;
+}
+.entryBtn{
+	display: flex;
+    color: #00c78f;
+    height: 12vmin;
+    width: 12vmin;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+	font-size: 2.5vmin;
+}
+.entryBtn:after{
+	content : '';
+	height : 100%;
+	width : 100%;
+	position : absolute;
+	top : 0;
+	left : 0;
+	border-radius: 50%;
+	border: solid 0.5vmin #00c78f;
+	box-sizing : border-box;
+	animation : 2s grow infinite linear;
+}
+@keyframes grow{
+	0%{
+		opacity : 0;
+	}
+	50%{
+		opacity : 1;
+	}
+	100%{
+		transform  : scale( 1.5 );
+		opacity : 0;
+	}
+}
+.screensBox_screen{
+	display: none;
+    justify-content: center;
+    align-items: center;
+	position: absolute;
+	height: 100%;
+    width: 100%;
+	overflow: hidden;
+	background-image: linear-gradient(-30deg, rgba(0,0,0,.3), transparent 85%)
+}
+.screensBox_screen.show{
+	display : flex;
+}
+.stream_controlsBox_btn{
+	height: 25px;
+    width: 25px;
+    color: #028560;
+    background-color: #061e17;
+    cursor: pointer;
+}
+#stream_controlsBox{
+	height: 25px;
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+#stream_controlsLine{
+	display : flex;
+	width: 100px;
+    transition: .5s;
+    transform: translateX( 75% );
+}
+#stream_controlsLine.open{
+	transform: translateX( 0% );
+}
+#stream_controlsOpenBtn{
+	background-position: 50% 50%;
+    background-size: 30% 50%;
+	background-repeat: no-repeat;
+	background-image: url( imgs/arrowIcon.png );
+}
+#stream_controlsOpenBtn.rotate{
+	transform: rotate(180deg);
+}
+/* remove */
+.stream_controlsBox_btn{
+	line-height : 25px;
+	text-align : center;
+}
+
+/* ---- new ---- */
+
+#screensBox {
+	background-color: #0000002b;
+}
+.entryScreen {
+	/*display: none;*/ /* TODO: remove */
+	background-color: black;
+	background-image: url(../imgs/0.png);
+    background-repeat: no-repeat;
+    background-position: center 100%;
+    background-size: 40vmin;
+}
+.entryScreen.show {
+	display: flex;
+}
+.streamSplashScreen {
+	height: 100%;
+	width: 100%;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	flex-direction: column;
+}
+.splashScreenImage {
+	height: 60vmin;
+    width: 60vmin;
+	background-size: 100% 100%;
+	filter: grayscale(1) brightness(0.7);
+	filter: brightness(0.6);
+	mix-blend-mode: luminosity;
+	border-radius: 1.5vmin;
+}
+.splashScreenText {
+	width: 60vmin;
+    font-size: 5vmin;
+    position: absolute;
+    color: aliceblue;
+    background-color: #02825d8c;
+    padding: 2vmin;
+    /* border-radius: 1vmin; */
+    text-align: center;
+    /* border-right: 0.5vmin solid #009b70; */
+    /* border-left: 0.5vmin solid #009b70; */
+    box-sizing: border-box;
+	transition: 0.5s;
+}
+.splashScreenText:hover {
+	background-color: #02825de0;
+}
+.noStreamScreen {
+	display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    width: 90%;
+	background-color: #0000009e;
+	border-radius: 2vmin;
+}
+.streamScreen {
+	display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10vmin;
+    height: 95%;
+    width: 95%;
+	background-color: #00000054;
+	position: relative;
+	border-radius: 1.5vmin;
+	overflow: hidden;
+}
+.streamScreen.show,
+.noStreamScreen.show {
+	display: flex;
+	justify-content: center;
+    align-items: center;
+}
+.streamControlsBox {
+	display: flex;
+    position: absolute;
+    z-index: 100;
+    bottom: 1vmin;
+    right: 1vmin;
+}
+.streamControlsBtn {
+	display: flex;
+    height: 6vmin;
+    width: 6vmin;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+	border-radius: 0.7vmin;
+	
+	color: #009b70;
+    border-right: 0.5vmin solid #009b70;
+    border-left: 0.5vmin solid #009b70;
+    background-color: #02825d8c;
+}
+.streamControlsBtn:hover {
+	background-color: #02976d;
+}
+#decViewBtn {
+	margin: 0 1vmin;
+}
+.splashScreenImageWrap {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	border: solid 0.5vmin #009b70;
+    border-radius: 1.5vmin;
+	position: relative;
+	cursor: pointer;
+}
+/* .screen { */
+	/* background-color: #000000c4; */
+/* } */
+
+/*
+.changeCatImgBtn {
+    height: 6vmin;
+    width: 6vmin;
+    position: absolute;
+    bottom: -5vmin;
+    background-image: url(../imgs/catIcon.png);
+    background-size: 80% 80%;
+    background-position: 30% center;
+    background-repeat: no-repeat;
+    background-color: #009068;
+    padding: 1vmin;
+    border-radius: 1vmin;
+    border: solid 0.5vmin #009b70;
+	mix-blend-mode: luminosity;
+	cursor: pointer;
+}
+*/

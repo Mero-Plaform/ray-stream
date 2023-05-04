@@ -1,0 +1,114 @@
+#body {
+	min-width: 550px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	color: #00c78f;
+	font-family: arial;
+	background-image: linear-gradient(45deg,#091311, #033927, #028560);
+	user-select: none;
+}
+#main {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+#streamBox {
+	height: calc(100% - 80px);
+}
+#videoPreviewElem {
+	display: none;
+	height: 100%;
+	width: 100%;
+	padding: 10px;
+    box-sizing: border-box;
+}
+#videoPreviewElem.show {
+	display: block;
+}
+.line {
+	display: flex;
+	height: 40px;
+    line-height: 40px;
+    background-image: linear-gradient(90deg, #00000052, #00000052);
+}
+.linePart.rightSide {
+	margin-left: auto;
+}
+.marginRight {
+	margin-right : 50px;
+}
+#usersCountSpan {
+	vertical-align : middle;
+}
+#usersCountImg {
+	height: 40px;
+    vertical-align: middle;
+    padding: 7px;
+	padding-right: 3px;
+    margin-left: 7px;
+    box-sizing: border-box;
+    -webkit-user-drag: none;
+    
+}
+.btn {
+	margin: 0 15px;
+	cursor: pointer;
+}
+.btn.lightBtn {
+	color : white;
+}
+.btn:hover {
+	color: #019c71;
+}
+#peerServerStatusIcon {
+	color: orange;
+}
+#textSection {
+	display: flex;
+	justify-content: center;
+	align-items : center;
+	height: 100%;
+	width: 100%;
+	perspective: 1000px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5000;
+	background-color: #033927;
+}
+#textSection.d_n {
+	display: none;
+}
+#plate {
+	height: 500px;
+	width: 500px;
+	background-color: #00c78f;
+	background-image: url(testIcon.png);
+	background-position: 50% 50%;
+	background-size: 70% 70%;
+	background-repeat: no-repeat;
+	animation: 3s rotate linear infinite;
+}
+@keyframes rotate {
+	to{
+		transform: rotatey(360deg);
+	}
+}
+#testBtn {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 10000;
+	cursor: pointer;
+}
+#togglePreviewBtn {
+	display: none;
+}

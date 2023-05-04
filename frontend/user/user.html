@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<title>User</title>
+		<meta charset='utf-8'>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' >
+		<link rel='stylesheet' href='./css/userStyle.css'>
+		<link id='pageIconElem' rel='icon' href='../imgs/framesIcon.png' >
+		<link rel='preload' as='image' href='../imgs/playIcon.png' >
+		<link rel='preload' as='image' href='../imgs/playIcon2.png' >
+		<script src='./../js/observer.js'></script>
+		<script src='./../js/peerjs.min.js'></script>
+		<script src='/socket.io/socket.io.js'></script>
+		<script defer src='./js/socketLogic.js'></script>
+		<script defer src='./js/peerLogic.js'></script>
+		<script defer src='./js/userScript.js'></script>
+		<script defer src='./js/streamViewControls.js'></script>
+	</head>
+	<body id='body'>
+		<section class='entryScreen screen show'>
+			<span class='entryBtn'> click </span>
+		</section>
+		<section class='noStreamScreen screen'>
+			<div class='splashScreenImageWrap'>
+				<div class='splashScreenImage'></div>
+				<span class='splashScreenText'>null</span>
+				<!--<span class='changeCatImgBtn'></span>-->
+			</div>
+		</section>
+		<section class='streamScreen screen'>
+			<div id='videoWrapper'>
+				<video id='streamingVideoElem'></video>
+			</div>
+			<div class='streamControlsBox'>
+				<span id='incViewBtn' class='streamControlsBtn'> + </span>
+				<span id='decViewBtn' class='streamControlsBtn'> - </span>
+				<span id='resViewBtn' class='streamControlsBtn'> x </span>
+			</div>
+		</section>
+	</body>
+</html>
